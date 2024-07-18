@@ -50,6 +50,7 @@ interface CanvasToolbarProps {
   undoCallback: () => void
   redoCallback: () => void
   resetCallback: () => void
+  resetZoomCallback: () => void
 }
 
 const CanvasToolbar = ({
@@ -61,6 +62,7 @@ const CanvasToolbar = ({
   undoCallback,
   redoCallback,
   resetCallback,
+  resetZoomCallback,
 }: CanvasToolbarProps) => {
   const GAP_BETWEEN_ICONS = 4
   const ICON_SIZE = 24
@@ -93,6 +95,13 @@ const CanvasToolbar = ({
       invertX: false,
       enabled: true,
       clickCallback: resetCallback,
+    },
+    {
+      imgUrl: bin,
+      altText: "Reset zoom",
+      invertX: false,
+      enabled: true,
+      clickCallback: resetZoomCallback,
     },
   ]
 
