@@ -218,7 +218,12 @@ const DrawableCanvas = ({ args }: ComponentProps) => {
     canvas.on('mouse:wheel', function(opt: any) {
       setZoom(canvas, opt.e);
       setZoom(backgroundCanvas, opt.e);
+
+      opt.e.preventDefault();
+      opt.e.stopPropagation();
     });
+
+    
 
 
     // Cleanup tool + send data to Streamlit events
